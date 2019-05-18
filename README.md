@@ -1,4 +1,4 @@
-# DolceForno - High-Precision Scraping Library
+# DolceForno: High-Precision Scraping Library
 
 ## Introduction
 
@@ -47,7 +47,7 @@ output_filepath = 'scraped/joan-didion-self-respect-essay-1961.json'
 dolce_forno.save(output, output_filepath)
 ```
 
-There's also a `cook_and_save()` method for convinience.
+There's also a `cook_and_save()` method for convenience.
 
 ```python
 import dolceforno
@@ -92,7 +92,7 @@ These are the publications DolceForno currently supports:
 - medium.com/
 - newyorker.com/
 - vogue.com/article/
-- wired.com/<YYYY>/<MM>/
+- wired.com/[YYYY]/[MM]/
 - wired.com/story/
 
 Is DolceForno missing your favourite publication? Consider adding it yourself!
