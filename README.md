@@ -107,7 +107,7 @@ would touch on 4 files, they are:
 - `tests/unit/dolceforno_urls.csv`
 - `tests/unit/assets/<new-recipe>/...`
 
-### dolceforno/recipes/<new-recipe>.py
+### `dolceforno/recipes/<new-recipe>.py`
 
 This is where your scraping logic should live. The file should contain a
 `Recipe` class that inherits from `AbstractRecipe` and implements 7 methods:
@@ -120,7 +120,7 @@ This is where your scraping logic should live. The file should contain a
 - `_extract_tags()`
 - `_extract_title()`
 
-#### \_extract_authors()
+#### `_extract_authors()`
 
 - Type: [str]
 - Optional: Yes
@@ -128,7 +128,7 @@ This is where your scraping logic should live. The file should contain a
 It extracts the authors of the article. Because any article could potentially
 be written by multiple authors, this is expected to be a list of strings.
 
-#### \_extract_category()
+#### `_extract_category()`
 
 - Type: str
 - Optional: Yes
@@ -136,7 +136,7 @@ be written by multiple authors, this is expected to be a list of strings.
 The category the article was posted under. Many websites don't have categories
 so it's perfectly fine for this to be empty. It's a string.
 
-#### \_extract_content()
+#### `_extract_content()`
 
 - Type: str
 - Optional: No
@@ -146,7 +146,7 @@ is expected to be used to convert the HTML into valid markdown. Note that
 `AbstractRecipe` implements some cleaning logic so that you don't need to worry
 about that yourself (e.g., remove spaces before commas).
 
-#### \_extract_image()
+#### `_extract_image()`
 
 - Type: str
 - Optional: Yes
@@ -155,7 +155,7 @@ The URL of the primary image for the article. All other images appearing
 in the article should instead be stored in `content` in markdown syntax
 (e.g. `!()[http://example.com/image.png]`). The URL should be absolute.
 
-#### \_extract_published()
+#### `_extract_published()`
 
 - Type: str
 - Optional: Yes
@@ -164,27 +164,27 @@ The date as a string in the format `YYYY-MM-DD`, e.g. `2019-12-31`. This is the
 only format accepted so if it's not possible to use this format (e.g., only
 the year is available; a very edge case) the field should be empty instead.
 
-#### \_extract_tags()
+#### `_extract_tags()`
 
 - Type: [str]
 - Optional: Yes
 
 The tags of the article as a list of strings.
 
-#### \_extract_title()
+#### `_extract_title()`
 
 - Type: str
 - Optional: No
 
 The title of the article.
 
-### dolceforno/dolceforno.py
+### `dolceforno/dolceforno.py`
 
 You'll simply need to add a new regex/path pair to `RECIPES_MAPPING`. This is
 needed for DolceForno to be able to automatically identify the appropriate
 recipe to use for the given URLs.
 
-### tests/unit/dolceforno_urls.csv
+### `tests/unit/dolceforno_urls.csv`
 
 Used to test that DolceForno is matching the correct recipe to the given URLs.
 Simply add 3 URLs and the corresponding recipe to the list. Please, add
@@ -193,7 +193,7 @@ add them at the end of the file).
 
 Note that these should be real, valid URLs.
 
-### tests/unit/assets/<new-recipe>/...
+### `tests/unit/assets/<new-recipe>/...`
 
 The scraping logic is tested on 3 articles available locally. These articles
 have to be added to /assets/ in a folder that has the name of your recipe. The
