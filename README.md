@@ -1,5 +1,7 @@
 # DolceForno: High-Precision Scraping Library
 
+![](https://github.com/annoys-parrot/dolceforno/blob/master/dolceforno.jpg?raw=true)
+
 ## Introduction
 
 **DolceForno is a library to scrape articles from all around the web.** Contrary
